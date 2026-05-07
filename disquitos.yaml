@@ -1,0 +1,118 @@
+openapi: 3.0.3
+info:
+  title: Disquitos Api
+  description: Api que gestiona un catálogo de discos y un carrito de compras. Permite consultar productos, agregar items al carrito, eliminarlos y calcular el total de la compra.
+  version: 1.0.0
+  contact: {}
+servers:
+- url: http://127.0.0.1:5000
+paths:
+  /:
+    get:
+      summary: Inicio
+      description: Muestra mensaje de bienvenida
+      operationId: inicio
+      responses:
+        '200':
+          description: ''
+      security:
+      - {}
+  /productos:
+    get:
+      summary: Productos
+      description: Muestra todos los discos disponibles
+      operationId: productos
+      responses:
+        '200':
+          description: ''
+      security:
+      - {}
+  /productos/Arise:
+    get:
+      summary: Ver info de producto
+      description: 'Consulto la informacion de un solo producto '
+      operationId: verInfoDeProducto
+      requestBody:
+        content:
+          text/plain:
+            examples:
+              Ver info de producto:
+                value: ''
+      responses:
+        '200':
+          description: ''
+      security:
+      - {}
+  /carrito:
+    get:
+      summary: Carrito
+      description: Muestra el carrito vacio o los productos agregados
+      operationId: carrito
+      responses:
+        '200':
+          description: ''
+      security:
+      - {}
+    post:
+      summary: Agrego discos al carrito
+      description: Agrega el nombre del disco y la cantidad
+      operationId: agregoDiscosAlCarrito
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cantidad:
+                  type: number
+                  example: 2
+                nombre:
+                  type: string
+                  example: Yes
+            examples:
+              Agrego discos al carrito:
+                value:
+                  cantidad: 2
+                  nombre: Yes
+      responses:
+        '200':
+          description: ''
+      security:
+      - {}
+  /carrito/Yes:
+    delete:
+      summary: Eliminar disco
+      description: Elimino todos los discos con el nombre solicitado
+      operationId: eliminarDisco
+      requestBody:
+        content:
+          application/json:
+            examples:
+              Eliminar disco:
+                value: ''
+      responses:
+        '200':
+          description: ''
+      security:
+      - {}
+  /carrito/total:
+    get:
+      summary: Total de compra
+      description: Muestra el total de la compra
+      operationId: totalDeCompra
+      requestBody:
+        content:
+          application/json:
+            examples:
+              Total de compra:
+                value: ''
+      responses:
+        '200':
+          description: ''
+      security:
+      - {}
+components:
+  securitySchemes: {}
+tags: []
+
+
