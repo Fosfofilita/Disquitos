@@ -1,1 +1,12 @@
 __pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+.venv/
+.pytest_cache/
+flask_session/
+.env
+*.env
+.DS_Store
+Thumbs.db
