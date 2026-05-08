@@ -10,4 +10,8 @@ flask_session/
 .env
 *.env
 .DS_Store
+<<<<<<< HEAD
 Thumbs.db
+=======
+Thumbs.db
+>>>>>>> 0226bb29066991887f97eeb32183471d65ee5bb0
